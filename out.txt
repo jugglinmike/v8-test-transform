@@ -1,0 +1,18 @@
+$ node .
+before:
+// Can recast handle ES6?
+var x = (dooDoo) => { dooDoo };
+class MyClass { constructor() {} };
+// Yes!
+assertSame(5001, 5001);
+// Trickier: argument hockey
+assertThrows(function() { throw new Error(); }, Error);
+
+after:
+// Can recast handle ES6?
+var x = (dooDoo) => { dooDoo };
+class MyClass { constructor() {} };
+// Yes!
+assert.sameValue(5001, 5001);
+// Trickier: argument hockey
+assert.throws(Error, function() { throw new Error(); });
