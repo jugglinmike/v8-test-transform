@@ -21,13 +21,17 @@ MSJUnit | Description | Test262 equivalent
 
 I recommend implemeting the following:
 
-- `assert.instanceOf`
-- `assert.doesNotThrow`
-- `assert.within` (for `assertEqualsDelta`)
-- `asset.deepEquals` (for `assertEquals`)
+- `assert.isInstance` - renamed to avoid confusion with the semantics of the
+   native JavaScript operator
+- `assert.withinDelta` for `assertEqualsDelta`; this one is a bit of a luxury,
+   but it shows up 41 times in V8's ES6 tests.
+- `asset.deepEquals` - for `assertEquals`
 
-We can expand `assertPropertiesEqual` using `assert.deepEquals`, or we can make
-comparisons manually because of its limited use.
+We can probably ignore:
+
+- `assertDoesNotThrow` - it's not used in V8's ES6 tests
+- `assertPropertiesEqual` - we can expand it using `assert.deepEquals`, or we
+  can make comparisons manually because of its limited use [1]
 
 Sources:
 
