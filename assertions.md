@@ -40,7 +40,8 @@ Sources:
 - https://github.com/tc39/test262/blob/master/harness/compareArray.js
 
 [1] 3 times in the files we're interested in, it looks like:
-    $ grep assertPropertiesE test/mjsunit/{harmony,es6} -r
+
+    $ grep assertProperties test/mjsunit/{harmony,es6} -r
     test/mjsunit/harmony/debug-blockscopes.js:      assertPropertiesEqual(global_object, scope.scopeObject().value());
     test/mjsunit/es6/generators-debug-scopes.js:  assertPropertiesEqual(scope1.scopeObject().value(), scope2.scopeObject().value());
     test/mjsunit/es6/generators-debug-scopes.js:      assertPropertiesEqual(this, scope.scopeObject().value());
